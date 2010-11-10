@@ -1,0 +1,6 @@
+<h1>Create an article</h1>
+<% form_for [:admin, @article] do |f| %>
+	<%= render(:partial => "form", :locals => {:f => f}) %>
+<% end %>
+<%= link_to 'Cancel', admin_articles_path %>
+

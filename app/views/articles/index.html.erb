@@ -1,0 +1,13 @@
+<%= render(:partial => "shared/article_search", :locals => { :articles_url => articles_path }) %><br />
+
+<h1>List of articles written so far:</h1>
+<%= will_paginate @articles %>
+<% @articles.each do |article| %>
+	<h2> <%= link_to (h article.title), article %> </h2>
+        <p> <%= h article.content %> </p>
+	<p>
+        written by <b><%= h article.get_author_name -%></b>
+        in <b><%= h article.get_group_name -%></b> |
+	<%= link_to 'Show more', article %>
+	</p>
+<% end %>

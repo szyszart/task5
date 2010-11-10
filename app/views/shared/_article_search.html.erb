@@ -1,0 +1,9 @@
+<%= form_for @search, :url => articles_url, :html => {:method => :get} do |f| %>
+    <b>Quick search:</b>
+    <%= f.text_field :title_or_content_contains %>
+    Articles per page:
+    <%= select_tag :per_page, options_for_select([2, 5, 10], @articles.per_page) %>
+    <br />
+    <%= f.submit %>
+<% end %>
+

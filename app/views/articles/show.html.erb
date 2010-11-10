@@ -1,0 +1,19 @@
+<p>
+	<%= link_to 'Return to the main page', articles_path %>
+</p>
+
+<h1><%= h @article.title -%></h1>
+<p> 
+  written by <b><%= h @article.get_author_name -%></b>
+  in <b><%= h @article.get_group_name -%></b> 
+</p>
+<p> <%= h @article.content -%> </p>
+<h2> Comments </h2>
+<p>		
+	<%= link_to 'Add comment', new_article_comment_path(@article) %> 
+</p>
+<% @article.comments.each do |a| %>
+	Written by <b> <%= h a.author %> </b>
+	<br />
+	<p> <%= h a.content %> </p>
+<% end %>

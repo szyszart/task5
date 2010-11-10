@@ -1,0 +1,16 @@
+<h1>List of articles written so far:</h1>
+<%= render(:partial => "shared/article_search", :locals => { :articles_url => admin_articles_path }) %><br />
+<%= link_to 'Create a new article', :action => 'new' %>
+<%= will_paginate @articles %>
+<% @articles.each do |article| %>
+<h2> <%= link_to (h article.title), admin_article_path(article) %> </h2>
+<p> <%= h article.content %> </p>
+<p>
+	written by <b><%= h article.get_author_name -%></b>
+        in <b><%= h article.get_group_name -%></b> | 
+	<%= link_to 'Edit', edit_admin_article_path(article) %> |
+	<%= link_to 'Show more', admin_article_path(article) %>
+	<%= button_to 'Delete', admin_article_path(article), :method => :delete %>
+	<hr />
+</p>
+<% end %>

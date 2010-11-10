@@ -1,0 +1,22 @@
+<html>
+        <head>
+                <title>Add a group of articles</title>
+        </head>
+
+        <body>
+                <h1>Add a group</h1> 
+                <% form_for([:admin, @group]) do |f| %>
+		<%= render "shared/error_messages", :target => @group %>
+
+                <p>
+                        <%= f.label :name %> <br />
+                        <%= f.text_field :name %>
+                </p>
+                <p>
+                        <%= f.submit 'Post' %>
+                </p>
+               <% end %>
+	       <%= link_to 'Cancel', admin_articles_path %>
+        </body>
+</html>
+
