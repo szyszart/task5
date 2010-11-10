@@ -5,7 +5,7 @@ class Article < ActiveRecord::Base
 	has_many :comments, :dependent => :destroy
 
 	def self.per_page
-		1
+		2
 	end
 
         def get_group_name

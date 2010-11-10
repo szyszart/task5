@@ -13,6 +13,8 @@ class ArticlesController < ApplicationController
 	def articles_per_page
 		if params[:per_page]
 		      session[:articles_per_page] = params[:per_page]
+		else
+		      session[:articles_per_page] = Article.per_page		      
     		end
 		session[:articles_per_page]
 	end

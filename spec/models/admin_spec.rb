@@ -25,11 +25,6 @@ describe Admin do
 			should_not be_valid
 		end
 
-		it "should reject too short passwords" do
-			short = "a" * 5
-			hash = @attr.merge(:password => short, :password_confirmation => short)
-			Admin.new(hash).should_not be_valid
-		end
 	end
 end
 
